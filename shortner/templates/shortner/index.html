@@ -1,3 +1,4 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -9,17 +10,36 @@
         <title>Shortify</title>
         <meta name="description" content="Site which shortens the URL">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}">
+        <link href="{% static "css/mycss.css" %}" rel="stylesheet">
     </head>
     <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-        <h4>Shortify To Shorten The Things!</h4>
-        <form action="/shortenURL" method="POST">
-            {% csrf_token %}
-        URL :<input type="text" name="url" id="url"><input type="submit" value="Shorten">
-        </form>
-        <script src="" async defer></script>
+    
+      
+    <div class="header">
+        <div class="def">
+     <p style="font-size:xx-large;
+     text-align: center;
+     color: white;
+     font-family: Verdana, Geneva, Tahoma, sans-serif; margin-top: 100px;">  URL Shortener</p>
+      <form action="/shortenURL" method="POST">
+        {% csrf_token %}
+        <div class="col-4" style="margin-left: 450px;">
+    <input type="text" name="url" id="url" placeholder="Paste a link" class="form-control">
+   
+        </div>
+  <input class="btn btn-warning" type="submit" value="Shorten">
+    
+    </form>
+   </div>
+    </div>
+
+    <div class="footer-block">
+  For more info, visit<a href="https://github.com/anidh"> https://github.com/anidh</a>
+    </div>
+    <script src="" async defer></script>
+                  
+            
+                         
     </body>
 </html>

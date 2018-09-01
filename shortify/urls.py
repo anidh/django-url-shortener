@@ -25,4 +25,5 @@ urlpatterns = [
     #For any incoming links which have been coming from the COPY-PASTE
     url(r'^(?P<id>[a-zA-Z0-9]+)',views.redirectExternal,name='shortner'),
     
+    
 ]

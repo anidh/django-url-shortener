@@ -14,6 +14,8 @@ import string
 def index(request):
     return render(request,'shortner/index.html')
 #We arrive here from the shortenURL link which is present in the index.html
+def failure(request):
+    return render(request,'shortner/failure.html')
 def longURL(request):
     if request.method=='POST':
         if request.POST.get('url'):

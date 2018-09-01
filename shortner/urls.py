@@ -20,6 +20,7 @@ from django.conf.urls import url
 urlpatterns = [
     #This will display the index page
     path('', views.index,name='index'),
+    path('failure', views.failure,name='failure'),
     #The will display the page which contains the shortened URL
     path('shortenURL',views.longURL,name='shortenURL'),
     #This will serve the link for url redirection.

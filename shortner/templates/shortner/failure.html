@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -9,14 +10,36 @@
         <title>Oops!</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+       
     </head>
-    <body>
+    <body style=" background-color:gray; margin: 0px; padding: 0px;">
+        <style>
+             .footer-block{
+       width:100%;
+       height: 30px;
+    
+      background-color:black;
+       color:white;
+       font-family: 'Times New Roman', Times, serif;
+       text-align: center;
+   }
+            
+            </style>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         
-        <script src="" async defer></script>
-    <h1>Oops! Something Went Wrong :(</h1>
+       
+        <div class="errorpage"> 
+              <h1 style="font-size:xx-large;
+              text-align: center;
+              color: white;
+              font-family: Verdana, Geneva, Tahoma, sans-serif; margin-top: 100px;">Oops! Something Went Wrong</h1>
+         <center><img src="{% static "images/oops.png" %}" height="100px" width="100px"></center>
+        </div>
+        <div class="footer-block" style="margin-top: 335px;">
+                For more info, visit<a href="https://github.com/anidh"> https://github.com/anidh</a>
+                  </div>
+                  <script src="" async defer></script>
     </body>
 </html>

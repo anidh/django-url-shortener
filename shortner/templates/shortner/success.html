@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -9,18 +10,52 @@
         <title>Link Shortened!</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
-    </head>
-    <body>
+        <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}">
+        <link href="{% static "css/mycss.css" %}" rel="stylesheet">
+        <script src="//code.jquery.com/jquery.min.js"></script>
+        <script src="{% static "js/copy-to-clipboard.js" %}"></script>
+        
+        <script>
+     $('button').click(function(){
+
+  $(this).CopyToClipboard();
+
+});
+
+        </script>
+ </head>
+    <body style="background-color:#398DD4;">
+        
+          
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        {% block content %}
-        <script src="" async defer></script>
-    <h4>Link Shortened!</h4>
-    <h5>For The URL:</h5>
-    <h5>{{longURL}}</h5>
-    <h4><a href="/shortner/{{shortURL}}">http://127.0.0.1:8000/{{shortURL}}</a></h4>
+      <div class="header2">
+      <div class="def"> 
+            <p style="font-size:xx-large;
+            text-align: center;
+            color: white;
+            font-family: Verdana, Geneva, Tahoma, sans-serif; margin-top: 100px;">URL shortner</p>
+            {% block content %}
+    <!-- Target -->
+    <div class="col-4" style="margin-left: 450px;">
+    <input id="foo" value="http://127.0.0.1:8000/{{shortURL}}" class="form-control" id="ShortenedURL">
+
+<!-- Trigger -->
+<button class="btn btn-secondary" data-clipboard-target=".foo" data-clipboard-text="http://127.0.0.1:8000/{{shortURL}}">
+   Copy to clipboard
+</button>
+
     {% endblock %}
+</div>
+</div>
+</div>
+<div class="footer-block" style="margin-top: 105px;">
+        <a href="https://github.com/anidh" target="blank"> Github</a>
+        <a href="https://anidh.github.io" target="blank"> Website</a>
+        <a href="http://pybros.com" target="blank"> Blog</a>
+        <a href="https://stackoverflow.com/users/4014359/anidh-singh" target="blank"> Stackoverflow</a>
+          </div>
+          <script src="" async defer></script>
     </body>
 </html>
